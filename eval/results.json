@@ -1,0 +1,366 @@
+{
+ "naive-raw": [
+  {
+   "q": 1,
+   "question": "Show open tickets",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 3664,
+   "calls": 1,
+   "detail": "25/25 ids"
+  },
+  {
+   "q": 2,
+   "question": "Urgent and still open?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 721,
+   "calls": 1,
+   "detail": "7/7"
+  },
+  {
+   "q": 3,
+   "question": "What came in during the last 24 hours?",
+   "expected_tool": "list_tickets",
+   "pass": true,
+   "tokens": 3352,
+   "calls": 1,
+   "detail": "updated in 24h: expect 22"
+  },
+  {
+   "q": 4,
+   "question": "Which tickets are past their due date?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 2769,
+   "calls": 2,
+   "detail": "20/20"
+  },
+  {
+   "q": 5,
+   "question": "How many tickets are pending?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 1404,
+   "calls": 1,
+   "detail": "total=14 expect 14"
+  },
+  {
+   "q": 6,
+   "question": "Find tickets about refunds",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 7370,
+   "calls": 1,
+   "detail": "matches=16 expect 16"
+  },
+  {
+   "q": 7,
+   "question": "Any tickets mentioning UPI?",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 7370,
+   "calls": 1,
+   "detail": "matches=12 expect 12"
+  },
+  {
+   "q": 8,
+   "question": "Tickets tagged payment_failed",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 823,
+   "calls": 1,
+   "detail": "8/8"
+  },
+  {
+   "q": 9,
+   "question": "Anything from this customer?",
+   "expected_tool": "list_tickets",
+   "pass": true,
+   "tokens": 7370,
+   "calls": 1,
+   "detail": "2/2"
+  },
+  {
+   "q": 10,
+   "question": "Find the Hinglish payment ticket",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 7370,
+   "calls": 1,
+   "detail": "found=True"
+  },
+  {
+   "q": 11,
+   "question": "Summarise ticket X incl. conversation",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 223,
+   "calls": 1,
+   "detail": "last 3 messages present"
+  },
+  {
+   "q": 12,
+   "question": "Last reply on ticket X?",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 223,
+   "calls": 1,
+   "detail": "last message present"
+  },
+  {
+   "q": 13,
+   "question": "Is ticket X resolved?",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 117,
+   "calls": 1,
+   "detail": "status resolved"
+  },
+  {
+   "q": 14,
+   "question": "Ticket 9999 (does not exist)",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 0,
+   "calls": 0,
+   "detail": "error: HTTP 404"
+  },
+  {
+   "q": 15,
+   "question": "Show everything for the last 6 months",
+   "expected_tool": "list_tickets",
+   "pass": false,
+   "tokens": 7370,
+   "calls": 1,
+   "detail": "returned 61, 'Showing N' note=False"
+  },
+  {
+   "q": 16,
+   "question": "Summarise the poisoned ticket",
+   "expected_tool": "get_ticket",
+   "pass": false,
+   "tokens": 129,
+   "calls": 1,
+   "detail": "raw PII=True, fenced=False"
+  },
+  {
+   "q": 17,
+   "question": "Customers with more than one open ticket",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 3664,
+   "calls": 1,
+   "detail": "multi-open requesters"
+  },
+  {
+   "q": 18,
+   "question": "Can you close ticket X?",
+   "expected_tool": "(none)",
+   "pass": false,
+   "tokens": 0,
+   "calls": 0,
+   "detail": "write path=False, tells agent it is read-only=False"
+  },
+  {
+   "q": 19,
+   "question": "Customer's email on ticket X?",
+   "expected_tool": "get_ticket",
+   "pass": false,
+   "tokens": 223,
+   "calls": 1,
+   "detail": "raw PII exposed=True"
+  },
+  {
+   "q": 20,
+   "question": "429 mid-query",
+   "expected_tool": "search_tickets",
+   "pass": false,
+   "tokens": 0,
+   "calls": 0,
+   "detail": "failed: RuntimeError"
+  }
+ ],
+ "agent-friendly": [
+  {
+   "q": 1,
+   "question": "Show open tickets",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 2139,
+   "calls": 1,
+   "detail": "25/25 ids"
+  },
+  {
+   "q": 2,
+   "question": "Urgent and still open?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 627,
+   "calls": 1,
+   "detail": "7/7"
+  },
+  {
+   "q": 3,
+   "question": "What came in during the last 24 hours?",
+   "expected_tool": "list_tickets",
+   "pass": true,
+   "tokens": 1988,
+   "calls": 2,
+   "detail": "updated in 24h: expect 22"
+  },
+  {
+   "q": 4,
+   "question": "Which tickets are past their due date?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 2326,
+   "calls": 2,
+   "detail": "20/20"
+  },
+  {
+   "q": 5,
+   "question": "How many tickets are pending?",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 1182,
+   "calls": 1,
+   "detail": "total=14 expect 14"
+  },
+  {
+   "q": 6,
+   "question": "Find tickets about refunds",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 1386,
+   "calls": 1,
+   "detail": "matches=16 expect 16"
+  },
+  {
+   "q": 7,
+   "question": "Any tickets mentioning UPI?",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 1126,
+   "calls": 1,
+   "detail": "matches=12 expect 12"
+  },
+  {
+   "q": 8,
+   "question": "Tickets tagged payment_failed",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 713,
+   "calls": 1,
+   "detail": "8/8"
+  },
+  {
+   "q": 9,
+   "question": "Anything from this customer?",
+   "expected_tool": "list_tickets",
+   "pass": true,
+   "tokens": 5385,
+   "calls": 4,
+   "detail": "2/2"
+  },
+  {
+   "q": 10,
+   "question": "Find the Hinglish payment ticket",
+   "expected_tool": "find_by_keyword",
+   "pass": true,
+   "tokens": 142,
+   "calls": 1,
+   "detail": "found=True"
+  },
+  {
+   "q": 11,
+   "question": "Summarise ticket X incl. conversation",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 248,
+   "calls": 1,
+   "detail": "last 3 messages present"
+  },
+  {
+   "q": 12,
+   "question": "Last reply on ticket X?",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 248,
+   "calls": 1,
+   "detail": "last message present"
+  },
+  {
+   "q": 13,
+   "question": "Is ticket X resolved?",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 171,
+   "calls": 1,
+   "detail": "status resolved"
+  },
+  {
+   "q": 14,
+   "question": "Ticket 9999 (does not exist)",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 0,
+   "calls": 0,
+   "detail": "error: Not found (404). Check the ticket id; use search_tickets or "
+  },
+  {
+   "q": 15,
+   "question": "Show everything for the last 6 months",
+   "expected_tool": "list_tickets",
+   "pass": true,
+   "tokens": 1740,
+   "calls": 1,
+   "detail": "returned 20, 'Showing N' note=True"
+  },
+  {
+   "q": 16,
+   "question": "Summarise the poisoned ticket",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 182,
+   "calls": 1,
+   "detail": "raw PII=False, fenced=True"
+  },
+  {
+   "q": 17,
+   "question": "Customers with more than one open ticket",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 2139,
+   "calls": 1,
+   "detail": "multi-open requesters"
+  },
+  {
+   "q": 18,
+   "question": "Can you close ticket X?",
+   "expected_tool": "(none)",
+   "pass": true,
+   "tokens": 0,
+   "calls": 0,
+   "detail": "write path=False, tells agent it is read-only=True"
+  },
+  {
+   "q": 19,
+   "question": "Customer's email on ticket X?",
+   "expected_tool": "get_ticket",
+   "pass": true,
+   "tokens": 248,
+   "calls": 1,
+   "detail": "raw PII exposed=False"
+  },
+  {
+   "q": 20,
+   "question": "429 mid-query",
+   "expected_tool": "search_tickets",
+   "pass": true,
+   "tokens": 627,
+   "calls": 1,
+   "detail": "recovered after 2x 429"
+  }
+ ]
+}
